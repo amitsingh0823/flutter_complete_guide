@@ -5,21 +5,20 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  var questionIndex = 0;
   void answerQuestion() {
-    print('Answer chose!');
+    questionIndex++;
+    print(questionIndex);
+    // print('Answer chose!');
   }
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    @override
-    Widget build(BuildContext context) {
-      var question = [
-        'What\'s your favourite colour ?',
-        'What\'s your favourite colour ?',
-      ];
-    }
-
+    var questions = [
+      'What\'s your favourite colour ?',
+      'What\'s your favourite animal ?',
+    ];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -27,17 +26,19 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Text('The question!'),
+            Text(
+              questions[questionIndex],
+            ),
             RaisedButton(
               child: Text('Answer 1'),
               onPressed:
                   answerQuestion, //function need to be pass without brackets
             ),
             RaisedButton(
-                child: Text('Answer 2'),
-                onPressed: () => print(
-                    'Answer 2 chosen !') // => is used for single expression
-                ),
+              child: Text('Answer 2'),
+              onPressed: () => print(
+                  'Answer 2 chosen !'), // => is used for single expression
+            ),
             RaisedButton(
                 child: Text('Answer 3'),
                 onPressed: () {
