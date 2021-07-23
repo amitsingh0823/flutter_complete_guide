@@ -34,13 +34,15 @@ class MyApp extends StatelessWidget {
                   answerQuestion, //function need to be pass without brackets
             ),
             RaisedButton(
-              child: Text('Answer 2'),
-              onPressed: answerQuestion,
-            ),
+                child: Text('Answer 2'),
+                onPressed: () => print(
+                    'Answer 2 chosen !') // => is used for single expression
+                ),
             RaisedButton(
-              child: Text('Answer 3'),
-              onPressed: answerQuestion,
-            ),
+                child: Text('Answer 3'),
+                onPressed: () {
+                  print('Answer 3 chosen !');
+                }),
           ],
         ),
       ),
